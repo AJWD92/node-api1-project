@@ -42,7 +42,8 @@ server.delete("/api/users/:id", (req, res) => {
         users = users.filter(user => user.id !== id);
 
         res.status(200).json(deleted);
-    } else if (!deleted) {
+    } 
+        else if (!deleted) {
         users = users.filter(user => user.id !== id);
  
         res.status(404).json({ success: false, message: 'user id not found' });
@@ -72,6 +73,8 @@ server.patch("/api/users/:id", (req, res) => {
 });
 
 server.get("/api/users/:id", (req, res) => {
+    const { id } = req.params;
+
     const found = users.find(user => user.id === id);
 
     if (found) {
