@@ -42,11 +42,12 @@ server.delete("/api/users/:id", (req, res) => {
         users = users.filter(user => user.id !== id);
 
         res.status(200).json(deleted);
-    // } else if (!deleted) {
-    //     users = users.filter(user => user.id !== id);
-
-    //     res.status(404).json({ success: false, message: 'user id not found' });
-    // } else {
+    } else if (!deleted) {
+        users = users.filter(user => user.id !== id);
+ 
+        res.status(404).json({ success: false, message: 'user id not found' });
+    } 
+      else {
         res.status(500).json({ success: false, errorMessage: 'user could not be deleted' });
     }
 });
@@ -64,7 +65,8 @@ server.patch("/api/users/:id", (req, res) => {
         res.status(404).json({ success: false, message: 'user id not found' });
     } else if (!changes) {
         res.status(400).json({ success: false, message: 'Please provide name and bio for the user'})
-    } else {
+    }
+      else {
         res.status(500).json({ success: false, errorMessage: 'The user info could not be modified'})
     }
 });
