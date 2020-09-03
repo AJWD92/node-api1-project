@@ -4,13 +4,16 @@ const shortid = require("shortid");
 
 const server = express();
 
+const cors = require("cors")
+
 let users = [];
 
 server.listen(4000, () => {
-    console.log('***Server listeing on port 4000***');
+    console.log('***Server listening on port 4000***');
 });
 
 server.use(express.json());
+server.use(cors());
 
 // gets blank users array from index
 server.get("/api/users", (req, res) => {
