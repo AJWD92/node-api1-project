@@ -79,6 +79,7 @@ web_modules/
 # Next.js build output
 .next
 
+
 # Nuxt.js build / generate output
 .nuxt
 dist
@@ -109,7 +110,4 @@ dist
 
 # yarn v2
 
-.yarn/cache
-.yarn/unplugged
-.yarn/build-state.yml
 .pnp.*
