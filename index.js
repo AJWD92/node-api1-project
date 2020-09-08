@@ -4,6 +4,7 @@ const shortid = require("shortid");
 
 const server = express();
 
+
 let users = [];
 
 server.listen(4000, () => {
@@ -11,6 +12,7 @@ server.listen(4000, () => {
 });
 
 server.use(express.json());
+
 
 // gets blank users array from index
 server.get("/api/users", (req, res) => {
